@@ -1,0 +1,13 @@
+{
+  "name": "Css",
+  "version": "1.0.0",
+  "author": "Arinx",
+  "license": "MIT",
+  "scripts": {
+    "start": "browser-sync start  --server  --files \"CSS/*.css,*.html\" "
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "browser-sync": "^2.23.5"
+  }
+}
