@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "browser-sync start  --server  --files \"CSS/*.css,*.html\" ",
-    "scss":"node-sass sass/main.scss css/style.css -w"
+    "scss": "node-sass sass/main.scss css/style.css -w"
   },
   "devDependencies": {
     "browser-sync": "^2.23.5",
