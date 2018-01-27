@@ -5,6 +5,7 @@
   //翻转功能
 
   perspective: 150rem;
+
   &__side {
     position: absolute;
     top: 0;
@@ -13,13 +14,14 @@
     width: 100%;
     height: 50rem;
     border-radius: 4px;
-    box-shadow: 0 1rem 2rem rgba($color-black, .1);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
 
     overflow: hidden;
 
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 
-    transition: all .8s ease;
+    transition: all 0.8s ease;
     &--front {
       background-color: $color-white;
     }
@@ -29,23 +31,23 @@
       transform: rotateY(-180deg);
       &-1 {
         background-image: linear-gradient(
-        to right bottom,
-        $color-secondary-light,
-        $color-secondary-dark
+                        to right bottom,
+                        $color-secondary-light,
+                        $color-secondary-dark
         );
       }
       &-2 {
         background-image: linear-gradient(
-        to right bottom,
-        $color-primary-light,
-        $color-primary-dark
+                        to right bottom,
+                        $color-primary-light,
+                        $color-primary-dark
         );
       }
       &-3 {
         background-image: linear-gradient(
-        to right bottom,
-        $color-tertiary-light,
-        $color-tertiary-dark
+                        to right bottom,
+                        $color-tertiary-light,
+                        $color-tertiary-dark
         );
       }
     }
@@ -53,7 +55,7 @@
   &:hover &__side--front {
     transform: rotateY(180deg);
   }
-   ~ &:hover &__side--back {
+  &:hover &__side--back {
     transform: rotateY(0deg);
   }
   // Front 样式
@@ -61,29 +63,28 @@
     height: 24rem;
     background-size: cover;
     background-blend-mode: screen;
-
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     &-1 {
       background-image: linear-gradient(
-      to right bottom,
-      $color-secondary-light,
-      $color-secondary-dark
+                      to right bottom,
+                      $color-secondary-light,
+                      $color-secondary-dark
       ),
       url(../img/nat-5.jpg);
     }
     &-2 {
       background-image: linear-gradient(
-      to right bottom,
-      $color-primary-light,
-      $color-primary-dark
+                      to right bottom,
+                      $color-primary-light,
+                      $color-primary-dark
       ),
       url(../img/nat-6.jpg);
     }
     &-3 {
       background-image: linear-gradient(
-      to right bottom,
-      $color-tertiary-light,
-      $color-tertiary-dark
+                      to right bottom,
+                      $color-tertiary-light,
+                      $color-tertiary-dark
       ),
       url(../img/nat-7.jpg);
     }
@@ -92,9 +93,7 @@
     position: absolute;
     top: 12rem;
     right: 2rem;
-
     width: 55%;
-
     font-weight: 300;
     font-size: 2.8rem;
     color: $color-white;
@@ -102,48 +101,39 @@
     text-align: right;
   }
   &__heading-span {
-    padding: .7rem .5rem;
-    opacity: .8;
-
-            box-decoration-break: clone;
+    padding: 0.7rem 0.5rem;
     -webkit-box-decoration-break: clone;
-
+    box-decoration-break: clone;
     &-1 {
       background-image: linear-gradient(
-      to right bottom,
-      $color-secondary-light,
-      $color-secondary-dark
+                      to right bottom,
+                      $color-secondary-light,
+                      $color-secondary-dark
       );
     }
-
     &-2 {
       background-image: linear-gradient(
-      to right bottom,
-      $color-primary-light,
-      $color-primary-dark
+                      to right bottom,
+                      $color-primary-light,
+                      $color-primary-dark
       );
     }
-
     &-3 {
       background-image: linear-gradient(
-      to right bottom,
-      $color-tertiary-light,
-      $color-tertiary-dark
+                      to right bottom,
+                      $color-tertiary-light,
+                      $color-tertiary-dark
       );
     }
   }
   &__details {
     padding: 3rem;
-
     ul {
       list-style: none;
-
       width: 80%;
       margin: 0 auto;
-
       li {
         padding: 1rem;
-
         font-size: 1.5rem;
         text-align: center;
         &:not(:last-child) {
@@ -152,31 +142,77 @@
       }
     }
   }
-
-  //Back Side Style
+  // Back Side Style
   &__cta {
     position: absolute;
     top: 50%;
     left: 50%;
-
     width: 90%;
-
     text-align: center;
-
     transform: translate(-50%, -50%);
   }
   &__price-box {
     margin-bottom: 6rem;
-
     color: $color-white;
     text-align: center;
   }
   &__price--only {
     font-size: 1.4rem;
+
     text-transform: uppercase;
   }
   &__price--value {
     font-weight: 100;
     font-size: 6rem;
+  }
+
+  @media only screen and (max-width: 56.25em),
+  only screen and (hover: none) {
+
+    height: auto;
+    //翻转功能
+    border-radius: 4px;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+    background-color: $color-white;
+    &__side {
+      position: relative;
+      width: 100%;
+      height: auto;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0);
+        clip-path: polygon(0 16%, 100% 1%, 100% 100%, 0 100%);
+
+      }
+    }
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: translate(0);
+      padding: 6rem 0;
+      border-radius: 0;
+    }
+
+    //重置翻转特效
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+    &:hover &__side--back {
+      transform: rotateY(0);
+    }
+
+    // 修改局部布局样式
+    &__details {
+      padding: 1rem;
+    }
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+    //&__price--value {
+    //  font-size: 3rem;
+    //}
   }
 }

@@ -32,9 +32,6 @@
       "$variable"
     ],
     [
-      "$include"
-    ],
-    [
       "position",
       "top",
       "right",
@@ -326,6 +323,9 @@
     ],
     [
       "$include media"
+    ],
+    [
+      "$include"
     ]
   ],
   "syntax": {

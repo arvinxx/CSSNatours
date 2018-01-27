@@ -5,11 +5,13 @@
   "license": "MIT",
   "scripts": {
     "start": "browser-sync start  --server  --files \"CSS/*.css,*.html\" ",
-    "scss": "node-sass sass/main.scss css/style.css -w"
+    "postcss": "postcss css/style.concat.css --use autoprefixer  -o css/style.prefix.css"
   },
   "devDependencies": {
+    "autoprefixer": "^7.2.5",
     "browser-sync": "^2.23.5",
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^4.1.1"
   },
   "dependencies": {}
 }

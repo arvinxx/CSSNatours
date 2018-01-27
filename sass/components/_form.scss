@@ -1,6 +1,9 @@
 .form {
   &__group:not(:last-child) {
     margin-bottom: 2rem;
+    @include respond(tab-port) {
+      margin-bottom: .5rem;
+    }
   }
   &__input {
     display: block;
@@ -16,7 +19,9 @@
     color: inherit;
 
     transition: all .5s ease;
-
+    @include respond(tab-port) {
+      width: 100%;
+    }
     &:focus {
       border-bottom: 3px solid $color-primary;
       outline: none;
@@ -52,6 +57,10 @@
     display: inline-block;
 
     width: 49%;
+    @include respond(tab-port){
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
   &__radio-label {
     position: relative;
@@ -88,7 +97,7 @@
 
       content: '';
 
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
 
       transition: opacity .2s ease;
     }

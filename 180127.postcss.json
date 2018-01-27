@@ -1,0 +1,12 @@
+{
+  "use": [
+    "autoprefixer"
+  ],
+  "input": "css/style.concat.css",
+  "output": "css/style.prefix.css",
+  "local-plugins": true,
+  //  "watch": true
+  "autoprefixer": {
+    "browsers": "> 5%"
+  }
+}

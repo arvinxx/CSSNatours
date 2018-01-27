@@ -12,11 +12,11 @@
   }
   &__button {
     position: fixed;
-    top: 6em;
-    right: 6em;
+    top: 6rem;
+    right: 6rem;
 
-    width: 5em;
-    height: 5em;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
     background-color: $color-white;
     box-shadow: 0 2rem 4rem rgba($color-black, .1);
@@ -31,15 +31,20 @@
     &:active {
       box-shadow: 0 .5rem 1rem rgba($color-black, .1);
     }
+
+    @include respond(tab-port){
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__background {
     position: fixed;
-    top: 6em;
-    right: 6em;
+    top: 6.3rem;
+    right: 6.3rem;
 
-    width: 5em;
-    height: 5em;
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 50%;
     background-image: radial-gradient(
     $color-primary-light,
@@ -50,6 +55,12 @@
     z-index: 10;
 
     transition: all .3s;
+
+    @include respond(tab-port){
+      top: 3.3rem;
+      right: 3.3rem;
+    }
+
   }
   &__nav {
     position: fixed;
@@ -99,6 +110,11 @@
       span {
         padding-right: 1rem;
         margin-right: .5rem;
+      }
+
+      @include respond(phone){
+        padding: .8rem 1.3rem;
+
       }
     }
     &:hover,
