@@ -5,11 +5,13 @@
   "license": "MIT",
   "scripts": {
     "start": "browser-sync start  --server  --files \"CSS/*.css,*.html\" ",
-    "postcss": "postcss css/style.concat.css --use autoprefixer  -o css/style.prefix.css"
+    "postcss": "postcss css/style.concat.css --use autoprefixer  -o css/style.prefix.css",
+    "publish": "gh-pages -d public"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "browser-sync": "^2.23.5",
+    "gh-pages": "^1.1.0",
     "node-sass": "^4.7.2",
     "postcss-cli": "^4.1.1"
   },
