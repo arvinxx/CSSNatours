@@ -13,7 +13,7 @@
     "browser-sync": "^2.23.5",
     "gh-pages": "^1.1.0",
     "node-sass": "^4.7.2",
-    "postcss-cli": "^4.1.1"
+    "postcss-cli": "9.1.0"
   },
   "dependencies": {}
 }
