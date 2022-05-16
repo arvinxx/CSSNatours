@@ -9,7 +9,7 @@
     "publish": "gh-pages -d public"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.5",
+    "autoprefixer": "10.4.7",
     "browser-sync": "^2.23.5",
     "gh-pages": "^1.1.0",
     "node-sass": "^4.7.2",
